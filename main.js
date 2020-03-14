@@ -1,17 +1,54 @@
 // website logo
-var aTag = document.createElement('a');
-aTag.setAttribute('href', 'index.html');
+let aTag,logo;
+aTag = document.createElement("a");
+aTag.setAttribute("href", "index.html");
+logo = document.createElement("div");
+logo.setAttribute("id", "logo");
+aTag.appendChild(logo);
+document.getElementsByTagName("header")[0].appendChild(aTag);
 
-// var img = document.createElement('img');
-// img.setAttribute('src', 'images/banner.png');
-// img.setAttribute('alt', 'Tour Lanka Logo');
+// --------- Making Main Navigation Bar ---------
 
-aTag.innerHTML = "Leaf.com";
+// ------------- Page data base -----------------
+var index = {name: 'Home', id:'index', file: '#index.html'};
+var about = {name: 'About', id:'about', file: '#about.html'};
+var shop = {name: 'Shop', id:'tours', file: '#tourPackages.html'};
+var gallery = {name: 'Gallery', id:'gal', file: '#gallery.html'};
 
-// aTag.appendChild(img);
+navLinks = [index, about, shop, gallery];
+let ul = document.createElement("ul");
+ul.setAttribute("id", "mainNavigation")
+navLinks.forEach((item, i) => {
+  let a = document.createElement("a");
+  a.innerHTML = item.name;
+  a.setAttribute("href", item.file);
+  a.setAttribute("id", item.id);
+  let li = document.createElement("li");
+  li.appendChild(a);
+  ul.appendChild(li);
+});
 
-document.getElementById('siteName').appendChild(aTag);
+// menu button for mobile devices
+let btnMenu = document.createElement('button');
+btnMenu.setAttribute('type', 'button');
+btnMenu.setAttribute('onclick', 'displayMenu()');
+btnMenu.innerHTML = 'menu <i class="fa fa-angle-down"></i>';
 
+document.getElementsByTagName("nav")[0].appendChild(btnMenu);
+
+
+document.getElementsByTagName("nav")[0].appendChild(ul);
+
+// Drop Down Menu - Mobile devices Only
+function displayMenu() {
+    var menu = document.getElementById('mainNavigation');
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    }else {
+        menu.style.display = "block";
+    }
+}
 
 // ----------- footer ------------
 var footer = document.getElementsByTagName('footer')[0];

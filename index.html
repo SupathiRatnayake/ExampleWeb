@@ -3,28 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Leaf.com</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="container">
 
       <header>
-        <div class="logo">
-          <div id="logo"></div>
-          <div class="title">
-            <p id="siteName"></p>
-          </div>
-        </div>
+          <!-- <div id="logo"></div> -->
       </header>
       <nav>
-        <ul>
+        <!-- <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#shop">Shop</a></li>
           <li><a href="#gallery">Gallery</a></li>
-        </ul>
+        </ul> -->
       </nav>
       <main>
         <h1>Home</h1>
@@ -39,14 +35,14 @@
           <div class="leaf">
             <img src="images/green_leaf.jpg" alt="green_leaf.jpg">
             <h2>Green leaf</h2>
-            <p>This is a grean leaf. These leaves are green as fuck. Because they are fuking alive, Doing photosynthesis using energy coming from sun rays...</p>
+            <p>This is a grean leaf. These leaves are green as fuck. Because they are fucking alive, Doing photosynthesis using energy coming from sun rays...</p>
             <a href="#green_leaf">read more</a>
           </div>
 
           <div class="leaf">
             <img src="images/pink_leaf.jpg" alt="green_leaf.jpg">
             <h2>Pink leaf</h2>
-            <p>Pink leaves. These leaves are fucking pink. Because they are fuking leaf toddlers hoping for a happy life, unfortunately...</p>
+            <p>Pink leaves. These leaves are fucking pink. Because they are fucking leaf toddlers hoping for a happy life, unfortunately...</p>
             <a href="#pink_leaf">read more</a>
           </div>
           <div class="leaf">
@@ -80,7 +76,7 @@
       if (index == 5) {
         index = 0;
       }
-      element.style.backgroundImage = "url(/images/leaves"+ index + ".jpg)";
+      element.style.backgroundImage = "url(images/leaves"+ index + ".jpg)";
       index++;
 
       setTimeout(slide, 3000); // every 2 seconds
