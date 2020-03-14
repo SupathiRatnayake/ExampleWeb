@@ -1,3 +1,17 @@
+// website logo
+var aTag = document.createElement('a');
+aTag.setAttribute('href', 'index.html');
+
+// var img = document.createElement('img');
+// img.setAttribute('src', 'images/banner.png');
+// img.setAttribute('alt', 'Tour Lanka Logo');
+
+aTag.innerHTML = "Leaf.com";
+
+// aTag.appendChild(img);
+
+document.getElementById('siteName').appendChild(aTag);
+
 
 // ----------- footer ------------
 var footer = document.getElementsByTagName('footer')[0];
