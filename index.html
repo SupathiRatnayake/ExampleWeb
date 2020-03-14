@@ -5,51 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.ico">
     <title>Leaf.com</title>
-    <style media="screen">
-      .image
-      {
-        background-image: url(/images/icon.png);
-        background-repeat: no-repeat;
-        background-size:contain;
-        height: 50px;
-      }
-      .slideshow
-      {
-        background-image: url(/images/leaves.jpg);
-        background-repeat: no-repeat;
-        background-size:contain;
-        height: 500px;
-      }
-      img
-      {
-        width: 100px;
-        padding: 1%;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
     <div class="container">
 
       <header>
-        <div class="icon">
-          <div class="image"></div>
-          <p>Leaf.com</p>
+        <div class="banner">
+          <div class="icon"></div>
+          <div class="title">
+            <p>Leaf.com</p>
+          </div>
         </div>
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Shop</li>
-            <li>Gallery</li>
-          </ul>
-        </nav>
       </header>
+      <nav>
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="gallery">Gallery</a></li>
+        </ul>
+      </nav>
       <main>
         <h1>Home</h1>
 
         <div class="slideshow">
-          <i>Get whatever leaves you want from one place</i>
-          <b>Shop now</b>
+          <p id="tagline">Get whatever leaves you want from one place</p>
+          <p id="shoplink"><a href="#shop">Shop now</a></p>
         </div>
 
         <div class="leaves">
@@ -90,4 +72,5 @@
 
     </div>
   </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
