@@ -155,19 +155,6 @@
   </body>
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript">
-
-    var index = 0;
-    var element = document.getElementsByClassName("slideshow")[0];
-    function slide(){
-      if (index == 5) {
-        index = 0;
-      }
-      element.style.backgroundImage = "url(images/leaves"+ index + ".jpg)";
-      index++;
-
-      setTimeout(slide, 3000); // every 2 seconds
-    }
     document.getElementById("about").setAttribute("class", "active");
-    slide();
   </script>
 </html>

@@ -146,6 +146,7 @@ fieldset
   color: inherit;
   border: 0.5vw solid #cf5;
   border-radius: 2vw;
+  margin: 2vw;
 }
 
 form label
