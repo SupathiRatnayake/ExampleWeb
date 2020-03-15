@@ -3,6 +3,7 @@ body
   margin: 0;
   font-size: 6vw;
   font-family: sans-serif;
+  width: 100vw;
 }
 
 a
@@ -52,51 +53,50 @@ nav
 
 nav button
 {
+  display: block;
   width: inherit;
   background-color: inherit;
   border: none;
   font-size: inherit;
 }
 
-nav ul
+#mainNavigation
 {
   display: none;
-  flex-direction: row;
-  justify-content: center;
-  list-style-type: none;
-  padding: 2%;
-  width: 80vw;
-  margin: auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
-nav ul li
+#mainNavigation a
 {
-  padding: 0;
+  padding: 5vw 0;
   margin: auto;
   font-size: 5vw;
-  height: 10vw;
-}
-
-nav ul li a
-{
   width: 100%;
-  margin: auto;
-  padding: 2vw;
   text-decoration: none;
   font-weight: bold;
   color: #333;
   font-family: sans-serif;
+  text-align: center;
+  transition: 0.3s;
 }
 
-nav ul li a:hover
+#mainNavigation a:hover
 {
-  background-color: #fff;
+  background-color: #df6;
+  font-size: 6vw;
+}
+
+#mainNavigation .active
+{
+  background: #fff;
 }
 
 h1
 {
   text-align: center;
   font-size: 7vw;
+  font-weight: bold;
   background-color: #fff;
   margin: 0;
   padding: 2%;

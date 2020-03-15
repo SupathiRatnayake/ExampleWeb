@@ -9,24 +9,7 @@ document.getElementsByTagName("header")[0].appendChild(aTag);
 
 // --------- Making Main Navigation Bar ---------
 
-// ------------- Page data base -----------------
-var index = {name: 'Home', id:'index', file: '#index.html'};
-var about = {name: 'About', id:'about', file: '#about.html'};
-var shop = {name: 'Shop', id:'tours', file: '#tourPackages.html'};
-var gallery = {name: 'Gallery', id:'gal', file: '#gallery.html'};
-
-navLinks = [index, about, shop, gallery];
-let ul = document.createElement("ul");
-ul.setAttribute("id", "mainNavigation")
-navLinks.forEach((item, i) => {
-  let a = document.createElement("a");
-  a.innerHTML = item.name;
-  a.setAttribute("href", item.file);
-  a.setAttribute("id", item.id);
-  let li = document.createElement("li");
-  li.appendChild(a);
-  ul.appendChild(li);
-});
+let nav = document.getElementsByTagName("nav")[0];
 
 // menu button for mobile devices
 let btnMenu = document.createElement('button');
@@ -34,19 +17,35 @@ btnMenu.setAttribute('type', 'button');
 btnMenu.setAttribute('onclick', 'displayMenu()');
 btnMenu.innerHTML = 'menu <i class="fa fa-angle-down"></i>';
 
-document.getElementsByTagName("nav")[0].appendChild(btnMenu);
+nav.appendChild(btnMenu);
 
+// ------------- Page data base -----------------
+var index = {name: 'Home', id:'index', file: '#index.html'};
+var about = {name: 'About', id:'about', file: '#about.html'};
+var shop = {name: 'Shop', id:'tours', file: '#tourPackages.html'};
+var gallery = {name: 'Gallery', id:'gal', file: '#gallery.html'};
 
-document.getElementsByTagName("nav")[0].appendChild(ul);
+navLinks = [index, about, shop, gallery];
+let navContainer = document.createElement("div");
+navContainer.setAttribute("id","mainNavigation");
+navLinks.forEach((item, i) => {
+  let a = document.createElement("a");
+  a.innerHTML = item.name;
+  a.setAttribute("href", item.file);
+  a.setAttribute("id", item.id);
+  navContainer.appendChild(a);
+});
+nav.appendChild(navContainer);
+
 
 // Drop Down Menu - Mobile devices Only
 function displayMenu() {
     var menu = document.getElementById('mainNavigation');
 
-    if (menu.style.display === "block") {
+    if (menu.style.display === "flex") {
         menu.style.display = "none";
     }else {
-        menu.style.display = "block";
+        menu.style.display = "flex";
     }
 }
 

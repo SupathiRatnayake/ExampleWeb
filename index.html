@@ -15,12 +15,6 @@
           <!-- <div id="logo"></div> -->
       </header>
       <nav>
-        <!-- <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-        </ul> -->
       </nav>
       <main>
         <h1>Home</h1>
@@ -70,6 +64,7 @@
   </body>
   <script type="text/javascript" src="main.js"></script>
   <script type="text/javascript">
+
     var index = 0;
     var element = document.getElementsByClassName("slideshow")[0];
     function slide(){
@@ -81,6 +76,7 @@
 
       setTimeout(slide, 3000); // every 2 seconds
     }
+    document.getElementById("index").setAttribute("class", "active");
     slide();
   </script>
 </html>
