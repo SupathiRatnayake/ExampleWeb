@@ -170,7 +170,7 @@ dataBox.setAttribute('class', 'footer-data');
     dataBox.appendChild(br);
 
     var a = document.createElement('a');
-    a.setAttribute('href', 'terms.html');
+    a.setAttribute('href', '#terms.html');
     a.setAttribute('id', 'terms');
     a.innerHTML = "Terms & Conditions";
 
