@@ -14,14 +14,15 @@ let nav = document.getElementsByTagName("nav")[0];
 // menu button for mobile devices
 let btnMenu = document.createElement('button');
 btnMenu.setAttribute('type', 'button');
+btnMenu.setAttribute('class', 'button');
 btnMenu.setAttribute('onclick', 'displayMenu()');
 btnMenu.innerHTML = 'menu <i class="fa fa-angle-down"></i>';
 
 nav.appendChild(btnMenu);
 
 // ------------- Page data base -----------------
-var index = {name: 'Home', id:'index', file: '#index.html'};
-var about = {name: 'About', id:'about', file: '#about.html'};
+var index = {name: 'Home', id:'index', file: 'index.html'};
+var about = {name: 'About', id:'about', file: 'about.html'};
 var shop = {name: 'Shop', id:'tours', file: '#tourPackages.html'};
 var gallery = {name: 'Gallery', id:'gal', file: '#gallery.html'};
 
@@ -91,7 +92,7 @@ dd.setAttribute('class', 'address');
 // ----- address --------
 
 var p = document.createElement('p');
-p.innerHTML = 'International Leafenist Organization';
+p.innerHTML = 'International Leafnist Organization';
 dd.appendChild(p);
 
 var p = document.createElement('p');

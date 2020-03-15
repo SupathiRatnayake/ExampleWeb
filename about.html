@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About | Leaf.com</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style media="screen">
+      figure
+      {
+        width: 50%;
+        padding: 2%;
+        margin: auto;
+      }
+
+      #poster
+      {
+        width: 100%;
+        padding: 0;
+      }
+
+      .logo
+      {
+        width: 50%;
+        margin: auto;
+      }
+
+      .logo img
+      {
+        background-color: #555;
+      }
+
+      #varieties
+      {
+        width: 80%;
+      }
+
+      fieldset
+      {
+        display: flex;
+        flex-direction: column;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <header></header>
+      <nav>
+      </nav>
+      <main>
+        <h1>About</h1>
+        <article class="article">
+
+          <h2>Welcome to Leafnism</h2>
+          <figure id="poster">
+            <img src="images/leafnism.jpeg" alt="leafnism.jpg">
+            <figcaption>Fig.1: Leafnism</figcaption>
+          </figure>
+          <section>
+            <h3>What is Leafnism?</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen leaf. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <figure class="logo">
+              <img src="images/logo.png" alt="logo.png">
+              <figcaption>Fig.2: International Leafnism Logo</figcaption>
+            </figure>
+          </section>
+          <section>
+            <h3>Leafnism isn't a mental disorder!</h3>
+            <figure>
+              <img src="images/fig3.png" alt="fig3.png">
+              <figcaption>Fig.3: Not a disorder</figcaption>
+            </figure>
+            <p>Contrary to popular belief, Leafnism is not simply a mental disorder. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Wilson Sykes, a botany professor at Hamilton College in New York, looked up one of the more obscure Leaves, consectetur, from a Leafnist passage, and going through the cites of the word in classical literature, discovered the undoubtable leaf.</p>
+          </section>
+
+          <section>
+            <h3>Verieties of Leafnism</h3>
+            <figure id="varieties">
+              <img src="images/diverse_leaves.png" alt="diverse_leaves.png">
+              <figcaption>Fig.4: Diversity of Leafnism</figcaption>
+            </figure>
+            <p>There are many variations of passions of Leafnism available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+          </section>
+
+        </article>
+
+        <h2>Join Leafnism</h2>
+        <form class="join" action="index.html" method="post">
+          <fieldset>
+            <legend>Your Details</legend>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Your name">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Your last name">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="davie504@example.com">
+          </fieldset>
+          <fieldset>
+            <legend>Your Leaf details</legend>
+            <label for="mytype">I am a</label>
+            <select id="mytype" class="leaves" name="mytype">
+              <option value="">Please select</option>
+              <optgroup label="simple">
+                <option value="Elliptic">Elliptic</option>
+                <option value="">Oblong</option>
+                <option value="">Cordate</option>
+                <option value="">Sinuate</option>
+              </optgroup>
+              <optgroup label="Lobed">
+                <option value="">Palmately lobed</option>
+                <option value="">Pinately lobed</option>
+                <option value="">Heirachically lobed</option>
+              </optgroup>
+              <optgroup label="Compound">
+                <option value="">Temate</option>
+                <option value="">Sessile leaflets</option>
+                <option value="">Pinnate</option>
+              </optgroup>
+            </select>
+            <label for="lookingfor">I'm looking for</label>
+            <select id="lookingfor" class="leaves" name="lookingfor">
+              <option value="">Please select</option>
+              <optgroup label="simple">
+                <option value="Elliptic">Elliptic</option>
+                <option value="">Oblong</option>
+                <option value="">Cordate</option>
+                <option value="">Sinuate</option>
+              </optgroup>
+              <optgroup label="Lobed">
+                <option value="">Palmately lobed</option>
+                <option value="">Pinately lobed</option>
+                <option value="">Heirachically lobed</option>
+              </optgroup>
+              <optgroup label="Compound">
+                <option value="">Temate</option>
+                <option value="">Sessile leaflets</option>
+                <option value="">Pinnate</option>
+              </optgroup>
+            </select>
+          </fieldset>
+          <input class="button" type="submit" name="submit" value="submit">
+          <input class="button" type="reset" name="reset" value="reset">
+        </form>
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript">
+
+    var index = 0;
+    var element = document.getElementsByClassName("slideshow")[0];
+    function slide(){
+      if (index == 5) {
+        index = 0;
+      }
+      element.style.backgroundImage = "url(images/leaves"+ index + ".jpg)";
+      index++;
+
+      setTimeout(slide, 3000); // every 2 seconds
+    }
+    document.getElementById("about").setAttribute("class", "active");
+    slide();
+  </script>
+</html>
