@@ -37,32 +37,78 @@
         width: 80%;
       }
 
-      .items input
-      {
-        display: none;
-      }
 
       .items
       {
-        display: grid;
-        grid-template-columns: auto;
+        display: flex;
+        flex-direction: column;
       }
 
-      .items label
+      .item
       {
         width: 100%;
-        margin: 2%;
-        margin-right: 2%;
+        height: 50vw;
       }
 
-      .items img
+      .item img
       {
-        width: 20%;
-        margin: inherit;
-        float: left;
+        width: 30%;
       }
 
+      .item dl
+      {
+        width: 60%;
+        float: right;
+      }
 
+      .controller
+      {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+      }
+
+      .controller
+      {
+        display: block;
+        background-color: #cf5;
+        margin: 0;
+        padding: 1% 20%;
+        border: none;
+        border-radius: 0;
+
+      }
+
+      .controller *
+      {
+        width: 50%;
+      }
+
+      .controller label
+      {
+        font-size: 5vw;
+        font-weight: bolder;
+      }
+
+      #total
+      {
+        background-color: #fff;
+      }
+
+      #purchaseDet
+      {
+        display: block;
+      }
+
+      #purchaseDet img
+      {
+        width: 10%;
+      }
+
+      #purchaseDet input
+      {
+        margin: 5% auto;
+      }
 
     </style>
   </head>
@@ -74,78 +120,39 @@
       </nav>
       <main>
         <h1>Shop</h1>
-        <form class="shop" method="post">
+        <form class="shop" onsubmit="purchase(this)">
           <fieldset class="controller">
-            <label for="leaftype">Laef Type</label>
-            <select id="leaftype" class="leaves" name="mytype">
-              <option value="">Please select</option>
-              <optgroup label="simple">
-                <option value="Elliptic">Elliptic</option>
-                <option value="">Oblong</option>
-                <option value="">Cordate</option>
-                <option value="">Sinuate</option>
-              </optgroup>
-              <optgroup label="Lobed">
-                <option value="">Palmately lobed</option>
-                <option value="">Pinately lobed</option>
-                <option value="">Heirachically lobed</option>
-              </optgroup>
-              <optgroup label="Compound">
-                <option value="">Temate</option>
-                <option value="">Sessile leaflets</option>
-                <option value="">Pinnate</option>
-              </optgroup>
-            </select>
-
-            <label for="colour">Colour</label>
-            <select class="colour" name="colour">
-              <option value="">Please select</option>
-              <option value="">Green</option>
-              <option value="">Red</option>
-              <option value="">Yellow</option>
-              <option value="">Pink</option>
-              <option value="">Multi color</option>
-            </select>
+            <label for="total">Total</label>
+            <input type="text" id="total" value="0.00$" disabled>
           </fieldset>
           <fieldset class="items">
             <legend>Leaves</legend>
-
-            <label for="l1">
-              <img src="images/green_leaf.jpg" alt="green_leaf.jpg">
-              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
-            </label>
-            <input type="checkbox" id="l1" value="green_leaf">
-
-            <label for="l2">
-              <img src="images/pink_leaf.jpg" alt="green_leaf.jpg">
-              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
-            </label>
-            <input type="checkbox" id="l2" value="green_leaf">
-
-            <label for="l3">
-              <img src="images/brown_leaf.jpg" alt="green_leaf.jpg">
-              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
-            </label>
-            <input type="checkbox" id="l3" value="green_leaf">
-
-            <label for="l4">
-              <img src="images/yellow_leaf.jpg" alt="green_leaf.jpg">
-              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
-            </label>
-            <input type="checkbox" id="l4" value="green_leaf">
+            <!-- javascript loads data -->
           </fieldset>
-          <fieldset>
+
+          <fieldset id="personalInfor">
             <legend>Your Details</legend>
             <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="Your name">
+            <input type="text" id="fname" name="First Name" placeholder="Your name">
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" placeholder="Your last name">
+            <input type="text" id="lname" name="Last Name" placeholder="Your last name">
             <label for="email">Email address</label>
-            <input type="email" id="email" placeholder="davie504@example.com">
+            <input type="email" id="email" name="Email Adress" placeholder="davie504@example.com">
           </fieldset>
-          <fieldset>
+          <fieldset id="purchaseDet">
             <legend>Purchase details</legend>
-
+            <label for="visa">
+              <img src="images/icon_Visa.png" alt="icon_Visa.png">
+            </label>
+            <input type="radio" id="visa" name="Payment_Method" value="Visa">
+            <label for="paypal">
+              <img src="images/icon_Paypal.png" alt="icon_Paypal.png">
+            </label>
+            <input type="radio" id="paypal" name="Payment_Method" value="Paypal">
+            <label for="mastercard">
+              <img src="images/icon_Mastercard.png" alt="Mastercard.png">
+            </label>
+            <input type="radio" id="mastercard" name="Payment_Method" value="mastercard">
           </fieldset>
           <input class="button" type="submit" name="submit" value="submit">
           <input class="button" type="reset" name="reset" value="reset">
@@ -159,6 +166,7 @@
     </div>
   </body>
   <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="shop.js"></script>
   <script type="text/javascript">
     document.getElementById("shop").setAttribute("class", "active");
   </script>

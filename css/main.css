@@ -128,11 +128,6 @@ h2
   font-size: 6vw;
 }
 
-article
-{
-  padding: 5%;
-}
-
 form
 {
   display: flex;
@@ -172,6 +167,16 @@ form input, select
   padding: 3% 0;
   border: 0;
   font-weight: bold;
+}
+
+.currency::after
+{
+  content: "$";
+}
+
+dl *
+{
+  margin: 0;
 }
 
 footer
