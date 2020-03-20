@@ -23,7 +23,7 @@ nav.appendChild(btnMenu);
 // ------------- Page data base -----------------
 var index = {name: 'Home', id:'index', file: 'index.html'};
 var about = {name: 'About', id:'about', file: 'about.html'};
-var shop = {name: 'Shop', id:'tours', file: '#tourPackages.html'};
+var shop = {name: 'Shop', id:'shop', file: 'shop.html'};
 var gallery = {name: 'Gallery', id:'gal', file: '#gallery.html'};
 
 navLinks = [index, about, shop, gallery];

@@ -147,6 +147,8 @@ fieldset
   border: 0.5vw solid #cf5;
   border-radius: 2vw;
   margin: 2vw;
+  display: flex;
+  flex-direction: column;
 }
 
 form label

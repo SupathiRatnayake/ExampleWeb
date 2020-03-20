@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About | Leaf.com</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style media="screen">
+      figure
+      {
+        width: 50%;
+        padding: 2%;
+        margin: auto;
+      }
+
+      #poster
+      {
+        width: 100%;
+        padding: 0;
+      }
+
+      .logo
+      {
+        width: 50%;
+        margin: auto;
+      }
+
+      .logo img
+      {
+        background-color: #555;
+      }
+
+      #varieties
+      {
+        width: 80%;
+      }
+
+      .items input
+      {
+        display: none;
+      }
+
+      .items
+      {
+        display: grid;
+        grid-template-columns: auto;
+      }
+
+      .items label
+      {
+        width: 100%;
+        margin: 2%;
+        margin-right: 2%;
+      }
+
+      .items img
+      {
+        width: 20%;
+        margin: inherit;
+        float: left;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <header></header>
+      <nav>
+      </nav>
+      <main>
+        <h1>Shop</h1>
+        <form class="shop" method="post">
+          <fieldset class="controller">
+            <label for="leaftype">Laef Type</label>
+            <select id="leaftype" class="leaves" name="mytype">
+              <option value="">Please select</option>
+              <optgroup label="simple">
+                <option value="Elliptic">Elliptic</option>
+                <option value="">Oblong</option>
+                <option value="">Cordate</option>
+                <option value="">Sinuate</option>
+              </optgroup>
+              <optgroup label="Lobed">
+                <option value="">Palmately lobed</option>
+                <option value="">Pinately lobed</option>
+                <option value="">Heirachically lobed</option>
+              </optgroup>
+              <optgroup label="Compound">
+                <option value="">Temate</option>
+                <option value="">Sessile leaflets</option>
+                <option value="">Pinnate</option>
+              </optgroup>
+            </select>
+
+            <label for="colour">Colour</label>
+            <select class="colour" name="colour">
+              <option value="">Please select</option>
+              <option value="">Green</option>
+              <option value="">Red</option>
+              <option value="">Yellow</option>
+              <option value="">Pink</option>
+              <option value="">Multi color</option>
+            </select>
+          </fieldset>
+          <fieldset class="items">
+            <legend>Leaves</legend>
+
+            <label for="l1">
+              <img src="images/green_leaf.jpg" alt="green_leaf.jpg">
+              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
+            </label>
+            <input type="checkbox" id="l1" value="green_leaf">
+
+            <label for="l2">
+              <img src="images/pink_leaf.jpg" alt="green_leaf.jpg">
+              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
+            </label>
+            <input type="checkbox" id="l2" value="green_leaf">
+
+            <label for="l3">
+              <img src="images/brown_leaf.jpg" alt="green_leaf.jpg">
+              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
+            </label>
+            <input type="checkbox" id="l3" value="green_leaf">
+
+            <label for="l4">
+              <img src="images/yellow_leaf.jpg" alt="green_leaf.jpg">
+              <p>Enim ut tellus elementum sagittis vitae et leo. Risus in hendrerit gravida rutrum quisque. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
+            </label>
+            <input type="checkbox" id="l4" value="green_leaf">
+          </fieldset>
+          <fieldset>
+            <legend>Your Details</legend>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="Your name">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Your last name">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="davie504@example.com">
+          </fieldset>
+          <fieldset>
+            <legend>Purchase details</legend>
+
+          </fieldset>
+          <input class="button" type="submit" name="submit" value="submit">
+          <input class="button" type="reset" name="reset" value="reset">
+        </form>
+
+      </main>
+      <footer>
+
+      </footer>
+
+    </div>
+  </body>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript">
+    document.getElementById("shop").setAttribute("class", "active");
+  </script>
+</html>
