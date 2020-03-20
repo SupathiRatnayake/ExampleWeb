@@ -47,17 +47,32 @@
       .item
       {
         width: 100%;
-        height: 50vw;
+        padding: 5% 0;
+        margin-bottom: 5% 0;
       }
 
       .item img
       {
-        width: 30%;
+        width: 40%;
       }
 
       .item dl
       {
-        width: 60%;
+        width: 50%;
+        float: right;
+        margin: 0;
+      }
+
+      .addToCart
+      {
+        background-color: #ce5;
+        text-align: center;
+        padding: inherit;
+        margin-bottom: 5%;
+      }
+
+      .addToCart input
+      {
         float: right;
       }
 
@@ -93,6 +108,7 @@
       #total
       {
         background-color: #fff;
+        text-align: right;
       }
 
       #purchaseDet
@@ -120,7 +136,7 @@
       </nav>
       <main>
         <h1>Shop</h1>
-        <form class="shop" onsubmit="purchase(this)">
+        <form class="shop" onsubmit="return purchase(this)">
           <fieldset class="controller">
             <label for="total">Total</label>
             <input type="text" id="total" value="0.00$" disabled>
@@ -138,6 +154,12 @@
             <input type="text" id="lname" name="Last Name" placeholder="Your last name">
             <label for="email">Email address</label>
             <input type="email" id="email" name="Email Adress" placeholder="davie504@example.com">
+            <label for="email">Address</label>
+            <input type="texbox" class="address" id="houseNo" name="House No." placeholder="Eg: 221B">
+            <input type="texbox" class="address" id="street" name="Street Address" placeholder="Eg: Baker Street">
+            <input type="texbox" class="address" id="city" name="City" placeholder="Eg: London">
+            <label for="postalcode">Postal Code</label>
+            <input type="number" id="postal" name="Postal code" placeholder="Eg: 12xxx">
           </fieldset>
           <fieldset id="purchaseDet">
             <legend>Purchase details</legend>

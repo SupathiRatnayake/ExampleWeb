@@ -169,14 +169,30 @@ form input, select
   font-weight: bold;
 }
 
-.currency::after
-{
-  content: "$";
-}
-
 dl *
 {
   margin: 0;
+  font-size: 4vw;
+}
+
+dt
+{
+  font-weight: bold;
+}
+
+dd
+{
+  font-style: italic;
+}
+
+.currency
+{
+  font-style: normal;
+}
+
+.currency::after
+{
+  content: "$";
 }
 
 footer
