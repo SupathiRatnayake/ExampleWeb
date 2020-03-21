@@ -102,28 +102,59 @@ leaves.forEach((item, i) => {
   itemBox.appendChild(divBar);
 });
 
+for (var i = 1; i <= 12; i++) {
+  let option = document.createElement("option");
+  option.setAttribute("value", i);
+  option.innerHTML = i;
+  document.getElementById("month").appendChild(option);
+}
+
+for (var i = 0; i <= 10; i++) {
+  let option = document.createElement("option");
+  let currentYear = 2020;
+  option.setAttribute("value", currentYear + i);
+  option.innerHTML = currentYear + i;
+  document.getElementById("year").appendChild(option);
+}
+
+function toggleDisplay(rad) {
+  if (rad.id == "card") {
+    document.getElementById("cardPayContent").style.display = "flex";
+    document.getElementById("paypalContent").style.display = "none";
+  }
+  else if (rad.id = "paypal") {
+    document.getElementById("cardPayContent").style.display = "none";
+    document.getElementById("paypalContent").style.display = "flex";
+  }
+}
+
+
+
 let selectedItems = [];
 
-document.getElementsByName("reset")[0].addEventListener("click", () =>
-{
+document.getElementsByName("reset")[0].addEventListener("click", () => {
   document.getElementById("total").setAttribute("value", "0.00");
 });
 
 function purchase(form) {
-  let purchaseItems = [];
 
   let inputs = form.personalInfor.elements;
-  let inputList = Array.prototype.slice.call(inputs);
-  console.log(inputs);
 
   for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].value == "") {
-      alert("Please fill " + inputs[i].name + " or I'll call the police!");
-      inputs[i].focus();
+    let e = inputs[i];
+    if (e.value == "") {
+      alert("Please fill " + e.name + " or I'll call the police!");
+      e.style.borderColor = "red";
+      e.focus();
       return false;
+    }
+    if (false) {
+      console.log("yolo");
     }
 
   }
+
+
 
   let msg = "";
   selectedItems.forEach((item, i) => {

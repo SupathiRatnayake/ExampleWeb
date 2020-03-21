@@ -65,10 +65,17 @@
 
       .addToCart
       {
-        background-color: #ce5;
+        background-color: #aaa;
         text-align: center;
-        padding: inherit;
+        padding: 2% 30%;
         margin-bottom: 5%;
+      }
+
+      .addToCart label
+      {
+        width: 100%;
+        padding: 0;
+        background-color: #ce5
       }
 
       .addToCart input
@@ -118,12 +125,25 @@
 
       #purchaseDet img
       {
-        width: 10%;
+        width: 12%;
       }
 
-      #purchaseDet input
+      #purchaseDet legend
       {
-        margin: 5% auto;
+        width: 90%;
+      }
+
+      .purchase_detail_content
+      {
+        display: none;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+
+      #cardPayContent
+      {
+        display: flex;
       }
 
     </style>
@@ -136,7 +156,7 @@
       </nav>
       <main>
         <h1>Shop</h1>
-        <form class="shop" onsubmit="return purchase(this)">
+        <form class="shop" name="shop" onsubmit="return purchase(this)">
           <fieldset class="controller">
             <label for="total">Total</label>
             <input type="text" id="total" value="0.00$" disabled>
@@ -163,18 +183,51 @@
           </fieldset>
           <fieldset id="purchaseDet">
             <legend>Purchase details</legend>
-            <label for="visa">
-              <img src="images/icon_Visa.png" alt="icon_Visa.png">
-            </label>
-            <input type="radio" id="visa" name="Payment_Method" value="Visa">
-            <label for="paypal">
-              <img src="images/icon_Paypal.png" alt="icon_Paypal.png">
-            </label>
-            <input type="radio" id="paypal" name="Payment_Method" value="Paypal">
-            <label for="mastercard">
-              <img src="images/icon_Mastercard.png" alt="Mastercard.png">
-            </label>
-            <input type="radio" id="mastercard" name="Payment_Method" value="mastercard">
+            <fieldset>
+              <legend>
+
+                <input type="radio" id="card" name="Payment_Method" value="Card Payment" onclick="toggleDisplay(this)" checked>
+                <label for="card">
+                  Credit/Debit Card
+                  <img src="images/icon_Visa.png" alt="icon_Visa.png">
+                  <img src="images/icon_Mastercard.png" alt="Mastercard.png">
+                  .etc
+                </label>
+              </legend>
+
+              <div id="cardPayContent" class="purchase_detail_content">
+                <label for="cardNo">Credit/Debit Card number</label>
+                <input type="password" id="cardNo" name="Card Number">
+
+                <label for="month">Month</label>
+                <select id="month" name="Month">
+                  <option value="">Please select</option>
+                </select>
+
+                <label for="year">Year</label>
+                <select id="year" name="Year">
+                  <option value="">Please select</option>
+                </select>
+
+                <label for="secCode">Credit/Debit Card number</label>
+                <input type="password" id="secCode" name="Security Code">
+
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>
+                <input type="radio" id="paypal" name="Payment_Method" value="Paypal" onclick="toggleDisplay(this)">
+
+                <label for="paypal">
+                  Paypal
+                  <img src="images/icon_Paypal.png" alt="icon_Paypal.png">
+                </label>
+              </legend>
+              <div id="paypalContent" class="purchase_detail_content">
+                <p>You will be directed to PayPal to access your account and authorize your payment. We will send the ordered items as soon as we have received the payment notification from PayPal.</p>
+              </div>
+            </fieldset>
           </fieldset>
           <input class="button" type="submit" name="submit" value="submit">
           <input class="button" type="reset" name="reset" value="reset">
