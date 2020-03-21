@@ -47,6 +47,54 @@
       /*
       CSS FOR ITEMS
       */
+      .itemContainer
+      {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border: 0.5vw solid #ddd;
+        border-radius: 2vw;
+        margin: 4% 0;
+      }
+
+      .item
+      {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 2%;
+      }
+
+      .item figure
+      {
+        width: 50%;
+      }
+
+      .item .detailsDiv
+      {
+        width: 50%;
+        padding-left: 3%;
+      }
+
+      .addToCart
+      {
+        text-align: center;
+      }
+
+      .itemContainer input
+      {
+        display: none;
+      }
+
+      .itemContainer label
+      {
+        text-align: center;
+        font-weight: bold;
+        display: inline;
+        background-color: #ce5;
+        padding: 2% 0;
+        border-radius: 0 0 1.5vw 1.5vw;
+      }
 
       #purchaseDet
       {
@@ -159,7 +207,7 @@
               </div>
             </fieldset>
           </fieldset>
-          <input class="button" type="submit" name="submit" value="submit">
+          <input class="button" type="submit" name="submit" value="Purchase">
           <input class="button" type="reset" name="reset" value="reset">
         </form>
 

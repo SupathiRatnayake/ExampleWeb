@@ -45,6 +45,7 @@ function Leaf(id, name, img, descrip, price) {
     dl.append(dtName, ddName, dtPrice, ddPrice);
 
     detailsDiv = document.createElement("div");
+    detailsDiv.setAttribute("class", "detailsDiv");
     detailsDiv.appendChild(dl);
 
     item.append(fig, detailsDiv);
@@ -76,14 +77,16 @@ let selectItem = (e) => {
     price += leaf.price;
     selectedItems.push(leaf);
     lbl.innerHTML = "Remove from cart";
+    lbl.style.backgroundColor = "#faa";
 
   }
   else {
     price -= leaf.price;
-    let startIndex;
-    startIndex = selectedItems.indexOf(leaf);
+    let index;
+    index = selectedItems.indexOf(leaf);
     console.log(selectedItems.splice(index, 1));
-    lbl.innerHTML = "Remove from cart";
+    lbl.innerHTML = "Add to cart";
+    lbl.style.backgroundColor = "#ce5";
 
   }
   document.getElementById("total").setAttribute("value", parseFloat(price).toFixed(2) + "$");
@@ -91,7 +94,7 @@ let selectItem = (e) => {
 }
 
 leaves.forEach((leaf, i) => {
-  let item, label, input, container;
+  let item, label, input, container, inputBar;
 
   item = leaf.makeElement();
 
@@ -99,7 +102,6 @@ leaves.forEach((leaf, i) => {
   label.setAttribute("for", leaf.id);
   label.setAttribute("id", "lbl" + leaf.id);
   label.innerHTML = "Add to Cart";
-  label.setAttribute("onclick", "toggleText(this)");
 
 
   input = document.createElement("input");
@@ -108,9 +110,13 @@ leaves.forEach((leaf, i) => {
   input.setAttribute("value", leaf.name);
   input.setAttribute("onclick", "selectItem(this)");
 
+  inputBar = document.createElement("div");
+  inputBar.setAttribute("class", "addToCart");
+  inputBar.append(input);
+
   container = document.createElement("div");
-  container.setAttribute("class", "addToCart");
-  container.append(item,input, label);
+  container.setAttribute("class", "itemContainer");
+  container.append(item,label, input);
 
   itemBox.appendChild(container);
 });
@@ -145,7 +151,6 @@ function toggleDisplay(rad) {
 }
 
 
-
 let selectedItems = [];
 
 document.getElementsByName("reset")[0].addEventListener("click", () => {
@@ -170,11 +175,15 @@ function purchase(form) {
 
   }
 
+  if (selectedItems.length == 0) {
+    alert("You have not selected any items!");
+    return false;
+  }
 
 
   let msg = "";
   selectedItems.forEach((item, i) => {
-    msg += item.name + "\n";
+    msg += item.name + item.price + "\n";
   });
 
   alert(msg);
@@ -182,3 +191,17 @@ function purchase(form) {
 
 
 }
+
+document.shop.reset.addEventListener("click", () => {
+  leaves.forEach((leaf, i) => {
+    let label = document.getElementById("lbl" + leaf.id);
+    label.style.backgroundColor = "#ce5"
+    label.innerHTML = "Add to cart"
+  });
+
+  document.getElementById("cardPayContent").style.display = "flex";
+  document.getElementById("paypalContent").style.display = "none";
+
+  selectedItems = [];
+
+});

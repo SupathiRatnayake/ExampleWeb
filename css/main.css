@@ -169,6 +169,11 @@ form input, select
   font-weight: bold;
 }
 
+dl
+{
+  margin: 0;
+}
+
 dl *
 {
   margin: 0;
