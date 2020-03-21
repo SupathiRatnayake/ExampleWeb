@@ -22,10 +22,13 @@ function Leaf(id, name, img, descrip, price) {
   this.price = price;
 
   this.makeElement = () =>{
-    let item, img, dl, dtName, ddName, dtPrice, ddPrice;
+    let item, fig, img, dl, dtName, ddName, dtPrice, ddPrice, detailsDiv;
     item = document.createElement("div");
     item.setAttribute("class", "item");
     img = this.img.makeElement();
+
+    fig = document.createElement("figure");
+    fig.appendChild(img);
 
     dl = document.createElement("dl");
 
@@ -39,10 +42,12 @@ function Leaf(id, name, img, descrip, price) {
     ddPrice = document.createElement("dd");
     ddPrice.setAttribute("class", "currency")
     ddPrice.innerHTML = parseFloat(this.price).toFixed(2);
-
     dl.append(dtName, ddName, dtPrice, ddPrice);
 
-    item.append(img, dl);
+    detailsDiv = document.createElement("div");
+    detailsDiv.appendChild(dl);
+
+    item.append(fig, detailsDiv);
 
     return item;
   }
@@ -63,11 +68,14 @@ let leaves = [l1, l2, l3, l4, l5, l6, l7];
 let selectItem = (e) => {
 
   let price = parseFloat(document.getElementById("total").getAttribute("value"));
+  let lbl = document.getElementById("lbl" + e.id);
+
   let leaf = leaves.find(item => item.id == e.id);
 
   if (e.checked == true) {
     price += leaf.price;
     selectedItems.push(leaf);
+    lbl.innerHTML = "Remove from cart";
 
   }
   else {
@@ -75,33 +83,39 @@ let selectItem = (e) => {
     let startIndex;
     startIndex = selectedItems.indexOf(leaf);
     console.log(selectedItems.splice(index, 1));
+    lbl.innerHTML = "Remove from cart";
+
   }
   document.getElementById("total").setAttribute("value", parseFloat(price).toFixed(2) + "$");
   console.log(selectedItems);
 }
 
-leaves.forEach((item, i) => {
-  itemBox.appendChild(item.makeElement());
+leaves.forEach((leaf, i) => {
+  let item, label, input, container;
 
-  let label, input, divBar;
+  item = leaf.makeElement();
 
   label = document.createElement("label");
-  label.setAttribute("for", item.id);
+  label.setAttribute("for", leaf.id);
+  label.setAttribute("id", "lbl" + leaf.id);
   label.innerHTML = "Add to Cart";
+  label.setAttribute("onclick", "toggleText(this)");
+
 
   input = document.createElement("input");
   input.setAttribute("type", "checkbox");
-  input.setAttribute("id", item.id);
-  input.setAttribute("value", item.name);
+  input.setAttribute("id", leaf.id);
+  input.setAttribute("value", leaf.name);
   input.setAttribute("onclick", "selectItem(this)");
 
-  divBar = document.createElement("div");
-  divBar.setAttribute("class", "addToCart");
-  divBar.append(label, input);
+  container = document.createElement("div");
+  container.setAttribute("class", "addToCart");
+  container.append(item,input, label);
 
-  itemBox.appendChild(divBar);
+  itemBox.appendChild(container);
 });
 
+// add options to select element MONTH
 for (var i = 1; i <= 12; i++) {
   let option = document.createElement("option");
   option.setAttribute("value", i);
@@ -109,6 +123,7 @@ for (var i = 1; i <= 12; i++) {
   document.getElementById("month").appendChild(option);
 }
 
+// add options to select element YEAR
 for (var i = 0; i <= 10; i++) {
   let option = document.createElement("option");
   let currentYear = 2020;
@@ -117,6 +132,7 @@ for (var i = 0; i <= 10; i++) {
   document.getElementById("year").appendChild(option);
 }
 
+// toggleDisplay function to show/hide payment details content
 function toggleDisplay(rad) {
   if (rad.id == "card") {
     document.getElementById("cardPayContent").style.display = "flex";
