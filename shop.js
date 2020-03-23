@@ -157,21 +157,84 @@ document.getElementsByName("reset")[0].addEventListener("click", () => {
   document.getElementById("total").setAttribute("value", "0.00");
 });
 
+let getAction = (e) =>{
+  let message = "Value you entered to " + e.name + " in invalid!";
+  if (e.value == "") {
+    message = "Please fill " + e.name + " or I'll call the police!";
+  }
+  alert(message);
+  e.style.borderColor = "red";
+  e.focus();
+}
+
+let isValid = (e) =>{
+
+  let regexMatch = {
+    "fname" : /^[a-zA-Z ]+$/,
+    "lname" : /^[a-zA-Z ]+$/,
+    "email" : /^\w+([\.-]?\w+)*@\w+([\.-]\w+)*(\.\w{2,3})+$/,
+    "houseNo" : /([^\s])/,
+    "street" : /([^\s])/,
+    "city" : /([^\s])/,
+    "postal" : /^\d+$/,
+    "cardNo" : /^\d+$/,
+    "month" : /^\d+$/,
+    "year" : /^\d+$/,
+    "secCode" : /^\d+$/,
+  }
+
+  if (!e.value.match(regexMatch[e.id])) {
+
+    return false;
+
+  }
+
+  return true;
+
+}
+
+let getPaymentMethod = () =>{
+
+  let radios = document.getElementsByName('Payment_Method');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      return radios[i];
+    }
+
+  }
+
+}
+
 function purchase(form) {
 
-  let inputs = form.personalInfor.elements;
+  let personalInformation = form.personalInfor.elements;
 
-  for (var i = 0; i < inputs.length; i++) {
-    let e = inputs[i];
-    if (e.value == "") {
-      alert("Please fill " + e.name + " or I'll call the police!");
-      e.style.borderColor = "red";
-      e.focus();
+  console.log(personalInformation);
+
+  for (var i = 0; i < personalInformation.length; i++) {
+    let e = personalInformation[i];
+    if (!isValid(e)){
+      getAction(e);
       return false;
     }
-    if (false) {
-      console.log("yolo");
-    }
+  }
+
+  if (getPaymentMethod(form).value == "Card Payment") {
+
+    let cardNo, month, year, secCode;
+
+    cardNo = document.getElementById("cardNo");
+    month = document.getElementById("month");
+    year = document.getElementById("year");
+    secCode = document.getElementById("secCode");
+
+    let elements = [cardNo, month, year, secCode];
+    elements.forEach((e, i) => {
+      if (!isValid(e)) {
+        getAction(e);
+        return false;
+      }
+    });
 
   }
 
@@ -181,12 +244,12 @@ function purchase(form) {
   }
 
 
-  let msg = "";
+  let msg = "Do you want to continue purchase?\n";
   selectedItems.forEach((item, i) => {
-    msg += item.name + item.price + "\n";
+    msg += item.name + " :   " + item.price + "\n";
   });
 
-  alert(msg);
+  confirm(msg);
   console.log(msg);
 
 
