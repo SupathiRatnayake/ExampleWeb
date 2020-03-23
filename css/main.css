@@ -134,6 +134,7 @@ form
   flex-direction: column;
   flex-wrap: nowrap;
   color: #444;
+  font-size: 5vw;
 }
 
 fieldset
@@ -148,7 +149,7 @@ fieldset
 
 form label
 {
-  font-size: 4vw;
+  font-size: inherit;
 }
 
 form input, select
@@ -156,8 +157,9 @@ form input, select
   font-size: inherit;
   padding: 1%;
   margin: 2%;
-  border-radius: 2vw;
-  border: 0.46vw solid #aaa;
+  border-radius: inherit;
+  border: inherit;
+  border-color: #aaa;
 }
 
 .button
@@ -177,7 +179,7 @@ dl
 dl *
 {
   margin: 0;
-  font-size: 4vw;
+  font-size: inherit;
 }
 
 dt
@@ -226,4 +228,148 @@ footer
   padding-bottom: 5%;
   border-bottom: 0.5vw solid #ce5;
   margin: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+
+  body
+  {
+
+    font-size: 1.5vw;
+
+  }
+
+  figcaption
+  {
+    color: #aaa;
+    font-size: 1vw;
+    font-style: italic;
+  }
+
+  header a
+  {
+    height: 10vw;
+    margin: auto;
+  }
+
+  nav
+  {
+    display: block;
+    width: 100vw;
+    background-color: #ce5;
+  }
+
+  nav button
+  {
+    display: none;
+  }
+
+  #mainNavigation
+  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  #mainNavigation a
+  {
+    padding: 2vw 0;
+    font-size: 2vw;
+    height: 3vw;
+  }
+
+  #mainNavigation a:hover
+  {
+    font-size: 3vw;
+  }
+
+  main
+  {
+    width: 80%;
+    margin: auto;
+  }
+
+  h1
+  {
+    font-size: 4vw;
+  }
+
+  h2
+  {
+    font-size: 3vw;
+  }
+
+  form
+  {
+    font-size: inherit;
+    width: 60%;
+    margin: auto;
+  }
+
+  fieldset
+  {
+    border: 0.2vw solid #cf5;
+    border-radius: 0.5vw;
+    margin: 2vw;
+  }
+
+  dl
+  {
+    margin: 0;
+  }
+
+  dl *
+  {
+    font-size: inherit;
+  }
+
+
+    footer
+  {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5vw;
+  }
+
+  footer *
+  {
+    font-size: 1.5vw;
+    text-align: left;
+  }
+
+  footer hr
+  {
+    display: none;
+  }
+
+  .footer-data, .credits
+  {
+      width: 20%;
+      padding: 2%;
+      background-color: #fff;
+  }
+
+  .footer-data dt
+  {
+      padding-top: 5%;
+  }
+
+  .footer-data dd
+  {
+      padding-top: 5%;
+      border-bottom: 0;
+  }
+
+  .footer-data
+  {
+      border-right: 2px solid #fc5;
+      margin-top: 5%;
+  }
+
+  footer #databox
+  {
+    border: none;
+  }
+
 }

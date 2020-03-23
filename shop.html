@@ -13,11 +13,6 @@
       {
         position: sticky;
         top: 0;
-        background-color: #fff;
-      }
-
-      .controller
-      {
         display: block;
         background-color: #cf5;
         margin: 0;
@@ -44,9 +39,7 @@
         text-align: right;
       }
 
-      /*
-      CSS FOR ITEMS
-      */
+      /*  CSS FOR ITEMS */
       .itemContainer
       {
         display: flex;
@@ -74,6 +67,7 @@
       {
         width: 50%;
         padding-left: 3%;
+        font-size: 4vw;
       }
 
       .addToCart
@@ -122,6 +116,46 @@
       #cardPayContent
       {
         display: flex;
+      }
+
+      @media only screen and (min-width: 1000px) {
+        .shop
+        {
+          width: 100%;
+        }
+
+        .shop *
+        {
+          font-size: 2vw;
+        }
+
+        .controller label, input
+        {
+          font-size: 3vw;
+          font-weight: bolder;
+        }
+
+        .items
+        {
+          margin: 0;
+        }
+
+        .itemContainer
+        {
+          border-radius: 1vw;
+          width: 20%;
+        }
+
+        .itemContainer *
+        {
+          font-size: 1vw;
+        }
+
+        .itemContainer label
+        {
+          border-radius: 0 0 0.5vw 0.5vw;
+        }
+
       }
 
     </style>
